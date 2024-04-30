@@ -1,0 +1,554 @@
+{
+  "mappings": {
+    "dynamic": false,
+    "fields": {
+      "_id": [
+        {
+          "type": "objectId"
+        },
+        {
+          "type": "token"
+        }
+      ],
+      "accessionNumberUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "acquisitionStatus": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "assignedNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "bodyPartExaminedUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "examDateTimeObject": [
+        {
+          "type": "date"
+        }
+      ],
+      "examDescriptionUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "examOriginalDateTime": [
+        {
+          "type": "token"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "examReasonUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "imageCount": [
+        {
+          "type": "number"
+        }
+      ],
+      "lockStatus": [
+        {
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "lockedAt": [
+        {
+          "type": "date"
+        }
+      ],
+      "lockedByUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "mappedPriority": {
+        "dynamic": false,
+        "fields": {
+          "priority": [
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "type": "document"
+      },
+      "matchStatus": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "modalitiesString": [
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "modalitiesUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "orderingDepartmentUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "orderingSystemId": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "orderingSystemNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "organizationId": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "organizationNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "otherPatientId": {
+        "dynamic": false,
+        "fields": {
+          "valueUpperStripped": [
+            {
+              "analyzer": "lowercaseKeywordAnalyzer",
+              "type": "string"
+            },
+            {
+              "normalizer": "lowercase",
+              "type": "token"
+            }
+          ]
+        },
+        "type": "document"
+      },
+      "patientBirthDateObject": [
+        {
+          "type": "date"
+        }
+      ],
+      "patientClassUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "patientGender": [
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        },
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "patientId": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "patientMrnUpper": [
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        },
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "patientNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "performingDepartmentUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "performingProviderNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "procedureCodeUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "procedureCompletedDateTime": [
+        {
+          "type": "date"
+        }
+      ],
+      "procedureDescriptionUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "procedureId": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "procedureLastModifiedDateTime": [
+        {
+          "type": "date"
+        }
+      ],
+      "procedureScheduledDateTime": [
+        {
+          "type": "date"
+        }
+      ],
+      "procedureStartedDateTime": [
+        {
+          "type": "date"
+        }
+      ],
+      "procedureStatus": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "qaIssue": {
+        "dynamic": false,
+        "fields": {
+          "code": [
+            {
+              "analyzer": "lowercaseKeywordAnalyzer",
+              "type": "string"
+            },
+            {
+              "normalizer": "lowercase",
+              "type": "token"
+            }
+          ]
+        },
+        "type": "document"
+      },
+      "readStatus": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "receivedDateTime": [
+        {
+          "type": "date"
+        }
+      ],
+      "referringPhysicianNameUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "relations": {
+        "dynamic": false,
+        "fields": {
+          "studies": {
+            "dynamic": false,
+            "fields": {
+              "props": {
+                "dynamic": false,
+                "fields": {
+                  "id": {
+                    "analyzer": "lowercaseKeywordAnalyzer",
+                    "type": "string"
+                  }
+                },
+                "type": "document"
+              }
+            },
+            "type": "document"
+          }
+        },
+        "type": "document"
+      },
+      "rqUserId": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        }
+      ],
+      "siteName": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "source": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "sourceUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "studyDescription": [
+        {
+          "type": "string"
+        }
+      ],
+      "unmatchedReason": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "visitCurrentLocationUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
+      "visitPrimaryLocationUpper": [
+        {
+          "analyzer": "lowercaseKeywordAnalyzer",
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ]
+    }
+  },
+  "analyzers": [
+    {
+      "name": "lowercaseKeywordAnalyzer",
+      "tokenFilters": [
+        {
+          "type": "lowercase"
+        }
+      ],
+      "tokenizer": {
+        "type": "keyword"
+      }
+    }
+  ],
+  "storedSource": {
+    "include": [
+      "id",
+      "accessionNumber",
+      "acquisitionStatus",
+      "assignedId",
+      "assignedName",
+      "bodyPartExamined",
+      "diagnosticReportId",
+      "examDateTime",
+      "examDescription",
+      "examOriginalDateTime",
+      "examReason",
+      "flag",
+      "imageCount",
+      "linkExamsInfo",
+      "lockedAt",
+      "lockedBy",
+      "lockedById",
+      "lockStatus",
+      "mappedPriority",
+      "matchStatus",
+      "modalitiesString",
+      "notes",
+      "notesCount",
+      "orderingDepartment",
+      "organizationId",
+      "organizationName",
+      "patientBirthDate",
+      "patientCurrentAgeDays",
+      "patientCurrentAgeMonths",
+      "patientCurrentAgeYears",
+      "patientGender",
+      "patientId",
+      "patientMrn",
+      "patientName",
+      "procedureCode",
+      "procedureDescription",
+      "procedureStartedDateTime",
+      "procedureScheduledDateTime",
+      "procedureCompletedDateTime",
+      "procedureLastModifiedDateTime",
+      "procedureId",
+      "procedureStatus",
+      "proposedStudyInstanceUid",
+      "qaIssue",
+      "readStatus",
+      "receivedDateTime",
+      "referringPhysicianName",
+      "siteName",
+      "source",
+      "studyId",
+      "studyIds",
+      "studyInstanceUids",
+      "orderingSystemName",
+      "orderingSystemId",
+      "unmatchedReason",
+      "unmatchedByUserId",
+      "unmatchedAt",
+      "visitPrimaryLocation",
+      "visitCurrentLocation",
+      "updatedAt",
+      "performingProviderName",
+      "performingDepartment",
+      "patientClass",
+      "otherPatientId"
+    ]
+  }
+}
