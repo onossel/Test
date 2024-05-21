@@ -1,0 +1,1201 @@
+{
+	"info": {
+		"_postman_id": "66ca758d-1171-4522-adc7-987b5bbd6203",
+		"name": "CHC",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetPosts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Cache-Control",
+						"value": "no-cache",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/posts",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "HL7-Procedure",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7a6f49989f73ded4fe8614b115da1299709defd0a0d8b903dcb64f5d55cc35e0",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"dataSourceSystemName\" : \"Mirth\",\n\"patientInfo\" : {\n\"name\" : \"Romanoff^Natasha^^^\",\n\"mrn\" : \"2323\",\n\"mpi\" : \"Test\",\n\"otherPatientIdentifiers\" : \"2345687\",\n\"birthDate\" : \"19580308154637\",\n\"patientSex\" : \"F\",\n\"primaryCarePhysicianName\" : \"\",\n\"patientAddress\" : \"123 Fake Street^^Springfield^CA^12345\",\n\"homePhone\" : \"(123)123-1234\",\n\"workPhone\" : \"(123)123-1234\",\n\"patientRace\" : \"CAUCASIAN\"\n},\n\"patientVisit\" : {\n\"admitDateTime\" : \"20181026\",\n\"dischargeDateTime\" : \"\"\n},\n\"procedureInfo\" : {\n\"accessionNumber\" : \"1435691\",\n\"procedureCode\" : \"X1022222222\",\n\"procedureDescription\" : \"X-RAY 1 VIEW AP CHEST\",\n\"procedureStatus\" : \"Performed\",\n\"reasonForExam\" : \" intubation; assess tube position\",\n\"relevantClinicalInfo\" : \"<NTE.3.1>Clinical Indications for requested exam: intubation</NTE.3.1><NTE.3.1>Information desired from requested exam: assess tube position</NTE.3.1>\",\n\"orderingDepartment\" : \"\",\n\"modality\" : \"CT\",\n\"bodyPart\" : \"LUNGS\",\n\"priority\" : \"STAT\",\n\"scheduledDateTime\" : \"20181022115900\",\n\"startedDateTime\" : \"20181026120000\",\n\"completedDateTime\" : \"20181026121016\",\n\"cancelledDateTime\" : \"\",\n\"requestingPhysicianName\" : \"JEKICH^ERIKA^J^^\",\n\"referringPhysicianName\" : \"SEINFELD^JOSHUA^^^\",\n\"attendingPhysicianName\" : \"CLEVENGER^AMY^C^^\",\n\"technologist\" : \"\",\n\"visitClass\" : \"I\",\n\"visitNumber\" : \"101011\",\n\"visitPrimaryLocation\" : \"3PICU\",\n\"visitCurrentLocation\" : \"\"\n}\n}"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/procedure",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Procedure",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 495e92671a763b7de053aec73dca34f89213e9af36ecd192ea85eaece83fd972",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"dataSourceSystemName\" : \"Mirth\",\n  \"patientInfo\" : {\n    \"name\" : \"syed\",\n    \"mrn\" : \"a-15\",\n    \"mpi\" : \"Test\",\n    \"otherPatientIdentifiers\" : \"2345687\",\n    \"birthDate\" : \"19580308154637\",\n    \"patientSex\" : \"F\",\n    \"primaryCarePhysicianName\" : \"\",\n    \"patientAddress\" : \"123 Fake Street^^Springfield^CA^12345\",\n    \"homePhone\" : \"(123)123-1234\",\n    \"workPhone\" : \"(123)123-1234\",\n    \"patientRace\" : \"CAUCASIAN\"\n  },\n  \"patientVisit\" : {\n    \"admitDateTime\" : \"20181026\",\n    \"dischargeDateTime\" : \"\"\n  },\n  \"procedureInfo\" : {\n    \"accessionNumber\" : \"20022003\",\n    \"procedureCode\" : \"X10261\",\n    \"procedureDescription\" : \"X-RAY 1 VIEW AP CHEST - VENTILATOR\",\n    \"procedureStatus\" : \"Ordered\",\n    \"reasonForExam\" : \" intubation; assess tube position\",\n    \"relevantClinicalInfo\" : \"<NTE.3.1>Clinical Indications for requested exam: intubation</NTE.3.1><NTE.3.1>Information desired from requested exam: assess tube position</NTE.3.1>\",\n    \"orderingDepartment\" : \"\",\n    \"OrderID\":\"hi order ID\",\n    \"PerformingDepartment\":\"Dp\",\n    \"modality\" : \"CR\",\n    \"bodyPart\" : \"LUNGS\",\n    \"priority\" : \"STAT\",\n    \"scheduledDateTime\" : \"20181022115900\",\n    \"startedDateTime\" : \"20181026120000\",\n    \"completedDateTime\" : \"20181026121016\",\n    \"cancelledDateTime\" : \"\",\n    \"requestingPhysicianName\" : \"JEKICH^ERIKA^J^^\",\n    \"referringPhysicianName\" : \"SEINFELD^JOSHUA^^^\",\n    \"attendingPhysicianName\" : \"CLEVENGER^AMY^C^^\",\n    \"technologist\" : \"\",\n    \"visitClass\" : \"How are pateint class\",\n    \"visitNumber\" : \"101011\",\n    \"visitPrimaryLocation\" : \"3PICU\",\n    \"visitCurrentLocation\" : \"\"\n  }\n}\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/procedure",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete-Procedure Copy",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 495e92671a763b7de053aec73dca34f89213e9af36ecd192ea85eaece83fd972",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n  \"dataSourceSystemName\" : \"Mirth\",\n  \"patientInfo\" : {\n    \"name\" : \"syed\",\n    \"mrn\" : \"a-15\",\n    \"mpi\" : \"Test\",\n    \"otherPatientIdentifiers\" : \"2345687\",\n    \"birthDate\" : \"19580308154637\",\n    \"patientSex\" : \"F\",\n    \"primaryCarePhysicianName\" : \"\",\n    \"patientAddress\" : \"123 Fake Street^^Springfield^CA^12345\",\n    \"homePhone\" : \"(123)123-1234\",\n    \"workPhone\" : \"(123)123-1234\",\n    \"patientRace\" : \"CAUCASIAN\"\n  },\n  \"patientVisit\" : {\n    \"admitDateTime\" : \"20181026\",\n    \"dischargeDateTime\" : \"\"\n  },\n  \"procedureInfo\" : {\n    \"accessionNumber\" : \"20022003\",\n    \"procedureCode\" : \"X10261\",\n    \"procedureDescription\" : \"X-RAY 1 VIEW AP CHEST - VENTILATOR\",\n    \"procedureStatus\" : \"Ordered\",\n    \"reasonForExam\" : \" intubation; assess tube position\",\n    \"relevantClinicalInfo\" : \"<NTE.3.1>Clinical Indications for requested exam: intubation</NTE.3.1><NTE.3.1>Information desired from requested exam: assess tube position</NTE.3.1>\",\n    \"orderingDepartment\" : \"\",\n    \"OrderID\":\"hi order ID\",\n    \"PerformingDepartment\":\"Dp\",\n    \"modality\" : \"CR\",\n    \"bodyPart\" : \"LUNGS\",\n    \"priority\" : \"STAT\",\n    \"scheduledDateTime\" : \"20181022115900\",\n    \"startedDateTime\" : \"20181026120000\",\n    \"completedDateTime\" : \"20181026121016\",\n    \"cancelledDateTime\" : \"\",\n    \"requestingPhysicianName\" : \"JEKICH^ERIKA^J^^\",\n    \"referringPhysicianName\" : \"SEINFELD^JOSHUA^^^\",\n    \"attendingPhysicianName\" : \"CLEVENGER^AMY^C^^\",\n    \"technologist\" : \"\",\n    \"visitClass\" : \"How are pateint class\",\n    \"visitNumber\" : \"101011\",\n    \"visitPrimaryLocation\" : \"3PICU\",\n    \"visitCurrentLocation\" : \"\"\n  }\n}\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/procedure",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"procedure"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report (ORU)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 58642f994c9eb244c4a3e9220e8a9598bc9436a2eb7ee4136fc012d3d6ae9500",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{​​​​​​​​\n\"dataSourceSystemName\" : \"Mirth\",\n\"patientInfo\" : {​​​​​​​​\n\"name\" : \"Patient-Updated^Workflow^^^\",\n\"mrn\" : \"2345687\",\n\"mpi\" : \"Test\",\n\"otherPatientIdentifiers\" : \"1234\",\n\"birthDate\" : \"19600210154637\",\n\"patientSex\" : \"M\",\n\"primaryCarePhysicianName\" : \"\",\n\"patientAddress\" : \"123 Fake Street^^Springfield^CA^12345\",\n\"homePhone\" : \"(123)123-1234\",\n\"workPhone\" : \"(123)123-1234\",\n\"patientRace\" : \"Unknown\"\n  }​​​​​​​​,\n\"patientVisit\" : {​​​​​​​​\n\"admitDateTime\" : \"20181026\",\n\"dischargeDateTime\" : \"\"\n  }​​​​​​​​,\n\"procedureInfo\" : {​​​​​​​​\n\"procedureCode\" : \"CAPC\",\n\"procedureDescription\" : \"CTA CHEST\",\n\"accessionNumber\" : \"1435691\",\n\"referringPhysicianName\" : \"SEINFELD^JOSHUA^^^\",\n\"observationDateTime\" : \"202003171500\",\n\"performingProviderName\" : \"\",\n\"relevantClinicalInfo\" : \"\",\n\"reasonForExam\" : \"\"\n  }​​​​​​​​,\n\"diagnosticReportInfo\" : {​​​​​​​​\n\"reportDateTime\" : \"20200317192518\",\n\"status\" : \"Revised\",\n\"contentType\" : \"Text\",\n\"content\" : \"<br>Hello World<br><br>If you can read this...<br>...Then HL7 tested successfully<br><br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>This is a really long report<br>END OF LINE\",\n\"principalInterpretingPhysicianName\" : \"\",\n\"assistantInterpretingPhysicianName\" : \"\",\n\"customReportInfo\" : {​​​​​​​​\n\"custom01\" : \"\",\n\"custom02\" : \"\",\n\"custom03\" : \"\",\n\"custom04\" : \"\",\n\"custom05\" : \"\",\n\"custom06\" : \"\",\n\"custom07\" : \"\",\n\"custom08\" : \"\",\n\"custom09\" : \"\",\n\"custom10\" : \"\",\n\"custom11\" : \"\",\n\"custom12\" : \"\",\n\"custom13\" : \"\",\n\"custom14\" : \"\",\n\"custom15\" : \"\",\n\"custom16\" : \"\",\n\"custom17\" : \"\",\n\"custom18\" : \"\",\n\"custom19\" : \"\",\n\"custom20\" : \"\",\n\"custom21\" : \"\",\n\"custom22\" : \"\",\n\"custom23\" : \"\",\n\"custom24\" : \"\",\n\"custom25\" : \"\"\n    }​​​​​​​​\n  }​​​​​​​​\n}​​​​​​​​"
+				},
+				"url": {
+					"raw": "https://automation-vv-01.c.ei-cs-dev01-ein.internal/workflow/diagnostic-report",
+					"protocol": "https",
+					"host": [
+						"automation-vv-01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"workflow",
+						"diagnostic-report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Post Context",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=UTF-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer meteor:QueuxwkO6SKjhVM2EFCg9eDxnID9BF3yI_FY9oIcG0S",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"studyId\" : \"41q2gzbz16h1p5lkpfcq3yrj\",\n            \"relatedStudyIds\":[]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pacs.ein.changehealthcare.com/ndx/launchcontext/9yZvQxZzcRGHb7Cq4",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"ein",
+						"changehealthcare",
+						"com"
+					],
+					"path": [
+						"ndx",
+						"launchcontext",
+						"9yZvQxZzcRGHb7Cq4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Procedure",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"query\": {\n        \"patientInfo.lastNameUpper\": \"P-1234\"\n      },\n      \"fields\": [\n  \n        \"patientId\",\n        \"procedureId\",\n        \"id\"\n\n\n      ]\n    }"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/procedures",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"procedures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Procedure Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"query\": {\n        \"patientInfo.lastNameUpper\": \"P-1234\"\n      },\n      \"fields\": [\n  \n        \"patientId\",\n        \"procedureId\",\n        \"id\"\n\n\n      ]\n    }"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/procedures",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"procedures"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Worklist",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer a26f9297e9d3e74d233acdb93e55a9152055452c5c6a91b161f854c9a10b367e",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/AfDpaWSnFP3nxDeaB/worklistEntities",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"AfDpaWSnFP3nxDeaB",
+						"worklistEntities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Worklist integ01",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 36c94378e94ccec6e73d7d71e731bca249e83c6696e5683c92ef4b349d3c6d8c",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"select\":[\"id\",\"matchStatus\",\"patientId\",\"patientMrn\",\"patientGender\",\"patientCurrentAgeYears\",\"patientCurrentAgeMonths\",\"patientCurrentAgeDays\",\"patientBirthDate\"],\n    \"filterBy\":{\"AND\":[{\"field\":\"patientMrn\",\"stringContains\":\"EL\"},{\"field\":\"examDescription\",\"stringContains\":\"AP\"},{\"field\":\"bodyPartExamined\",\"stringContains\":\"MR\"}]},\n    \"sortBy\":[{\"field\":\"patientName\",\"order\":\"DESC\"},{\"field\":\"examDateTime\",\"order\":\"ASC\"}],\n    \"limit\": 100,\n    \"offset\": 0\n}"
+				},
+				"url": {
+					"raw": "https://integration01.c.ei-cs-dev01-ein.internal/api/organizations/sB7HXL6vNQEfThryd/worklistEntities",
+					"protocol": "https",
+					"host": [
+						"integration01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"sB7HXL6vNQEfThryd",
+						"worklistEntities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prior exam refresh",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/9fmrYkCMCkE4cu5PB/priorExams/3tDTXm6cC2woQDBN5/refresh",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"9fmrYkCMCkE4cu5PB",
+						"priorExams",
+						"3tDTXm6cC2woQDBN5",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get-Study",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/study-information/organization/9fmrYkCMCkE4cu5PB/study/2.25.114873914280291197460582985216982629873",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"study-information",
+						"organization",
+						"9fmrYkCMCkE4cu5PB",
+						"study",
+						"2.25.114873914280291197460582985216982629873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put priority",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/study-information/organization/9fmrYkCMCkE4cu5PB/study/2.25.114873914280291197460582985216982629873",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"study-information",
+						"organization",
+						"9fmrYkCMCkE4cu5PB",
+						"study",
+						"2.25.114873914280291197460582985216982629873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "put priority Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/study-information/organization/9fmrYkCMCkE4cu5PB/study/2.25.114873914280291197460582985216982629873",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"study-information",
+						"organization",
+						"9fmrYkCMCkE4cu5PB",
+						"study",
+						"2.25.114873914280291197460582985216982629873"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update proc",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 7ecf64242d67b59ecead4f13a131e18ed0e9f199d6ce0dd5fe2ebbe1b6309dbf",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/9fmrYkCMCkE4cu5PB/worklistEntities/HwbSksiK6mrRirwiJ/procedures/TvbRLsohByyFNmt5Y",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"9fmrYkCMCkE4cu5PB",
+						"worklistEntities",
+						"HwbSksiK6mrRirwiJ",
+						"procedures",
+						"TvbRLsohByyFNmt5Y"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update proc Copy",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 6d8c95ef2aef2b5af5e3700f977f0f228889679b40ae831178c2ce733fe6c455",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"command\":\"set\",\n  \"x0020000e\":\"*\",\n  \"x00080018\":\"*\",\n  \"tagPath\":\"x00100020\",\n  \"value\":\"LO:26092111\"\n}"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/FNNmkZM9X3TfG8bn7/worklistEntities/pSeMWjtPuNKRcGEGi/studies/999qxqz55g7prwsfz9j22bz0",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"FNNmkZM9X3TfG8bn7",
+						"worklistEntities",
+						"pSeMWjtPuNKRcGEGi",
+						"studies",
+						"999qxqz55g7prwsfz9j22bz0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "remote-authentication",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ab8afe0a2109e293d33a8843dde29ad326b8410ba74d202da63ffc554052b564",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/edge-services/remote-authentication/events?names=authentication&timeout-ms=14000",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"edge-services",
+						"remote-authentication",
+						"events"
+					],
+					"query": [
+						{
+							"key": "names",
+							"value": "authentication"
+						},
+						{
+							"key": "timeout-ms",
+							"value": "14000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add ext assignment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 15749b3b76ec6441a8170c04a63aad4e0792997c15039acc821ba026f94bbba5",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n\"accessionNumber\": \"1000-1\",\n\"firstName\": \"non-user-first\",\n\"lastName\": \"non-user-last\",\n\"assigneeId\": \"789\"\n}"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/oWTMov3AWwnGnTZJK/externalassignment/add",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"oWTMov3AWwnGnTZJK",
+						"externalassignment",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report (ORU)-demo data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer fb3b10e7fcdc34a60e40d3cccc8113254706dc80c6a5534eafa07886285bd5d3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataSourceSystemName\": \"Mirth\",\n    \"patientInfo\": {\n        \"name\": \"Lisa^Simpson^^^\",\n        \"mrn\": \"a-15\",\n        \"mpi\": \"mpi-LISA-test\",\n        \"otherPatientIdentifiers\": \"1234\",\n        \"birthDate\": \"20021212154637\",\n        \"patientSex\": \"M\",\n        \"primaryCarePhysicianName\": \"\",\n        \"patientAddress\": \"123 Fake Street^^Springfield^CA^12345\",\n        \"homePhone\": \"(123)123-1234\",\n        \"workPhone\": \"(123)123-1234\",\n        \"patientRace\": \"Unknown\"\n    },\n    \"patientVisit\": {\n        \"admitDateTime\": \"20050501\",\n        \"dischargeDateTime\": \"\"\n    },\n    \"procedureInfo\": {\n        \"procedureCode\": \"CAPC\",\n        \"procedureDescription\": \"uncompressed ct\",\n        \"accessionNumber\": \"a-15\",\n        \"referringPhysicianName\": \"SEINFELD^JOSHUA^^^\",\n        \"observationDateTime\": \"20050501103518\",\n        \"performingProviderName\": \"\",\n        \"relevantClinicalInfo\": \"\",\n        \"reasonForExam\": \"\"\n    },\n    \"diagnosticReportInfo\": {\n        \"reportDateTime\": \"20050501103518\",\n        \"status\": \"Final\",\n        \"contentType\": \"Text\",\n        \"content\": \"<br>Echocardiography Radiology Report<br><br>Reason for exam: Suspected Myocarditis<br>Radiologist: Test, Test MD<br><br>Report<br>Echo Data:<br><br>LVIDd 6.3cm, LVIDs 4.5 cm, IVSd 1.3 cm, LVPWd 0.79cm, LA 3.7 cm, LAV 63.10cm. For additional echo data, see report attached<br>ECG Rhythm: Normal sinus rhythm<br>Normal size of the left ventricle (End-diastolic volume = 29.80 ml/m2), normal wall thickness and normal left ventricular function (EF = 54%), no regional wall motion abnormalities, normal diastolic function.<br>Normal size of the left atrium, normal size of the right atrium.<br>Normal size and morphology of the right ventricle, normal right ventricular function, no abnormalities of the interventricular septum.<br>Normal size of all visible segments of the ascending aorta, normal size of the pulmonary artery, normal pulmonary valve (physiologic pulmonary regurgitation).<br>Normal morphology and function of the aortic valve; Normal morphology and function of the mitral valve.<br>Normal morphology of the tricuspid valve, physiologic / trace tricuspid regurgitation, normal systolic pulmonary pressure (sPAP = 5.00 mmHg, TR velocity 1.30 m/s)<br>Normal size and respiratory collapse of the inferior vena cava.<br>No pericardial or pleural effusion<br>Conclusion:<br><br>Normal echocardiogram (no evidence for acute or chronic myocarditis). No relevant prior comparison available.<br>\",\n        \"principalInterpretingPhysicianName\": \"\",\n        \"assistantInterpretingPhysicianName\": \"\",\n        \"customReportInfo\": {\n            \"custom01\": \"\",\n            \"custom02\": \"\",\n            \"custom03\": \"\",\n            \"custom04\": \"\",\n            \"custom05\": \"\",\n            \"custom06\": \"\",\n            \"custom07\": \"\",\n            \"custom08\": \"\",\n            \"custom09\": \"\",\n            \"custom10\": \"\",\n            \"custom11\": \"\",\n            \"custom12\": \"\",\n            \"custom13\": \"\",\n            \"custom14\": \"\",\n            \"custom15\": \"\",\n            \"custom16\": \"\",\n            \"custom17\": \"\",\n            \"custom18\": \"\",\n            \"custom19\": \"\",\n            \"custom20\": \"\",\n            \"custom21\": \"\",\n            \"custom22\": \"\",\n            \"custom23\": \"\",\n            \"custom24\": \"\",\n            \"custom25\": \"\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/diagnostic-report",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"diagnostic-report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report (ORU)-demo data Production",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer fb3b10e7fcdc34a60e40d3cccc8113254706dc80c6a5534eafa07886285bd5d3",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "*/*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"dataSourceSystemName\": \"Mirth\",\n    \"patientInfo\": {\n        \"name\": \"Lisa^Simpson^^^\",\n        \"mrn\": \"a-15\",\n        \"mpi\": \"mpi-LISA-test\",\n        \"otherPatientIdentifiers\": \"1234\",\n        \"birthDate\": \"20021212154637\",\n        \"patientSex\": \"M\",\n        \"primaryCarePhysicianName\": \"\",\n        \"patientAddress\": \"123 Fake Street^^Springfield^CA^12345\",\n        \"homePhone\": \"(123)123-1234\",\n        \"workPhone\": \"(123)123-1234\",\n        \"patientRace\": \"Unknown\"\n    },\n    \"patientVisit\": {\n        \"admitDateTime\": \"20050501\",\n        \"dischargeDateTime\": \"\"\n    },\n    \"procedureInfo\": {\n        \"procedureCode\": \"CAPC\",\n        \"procedureDescription\": \"uncompressed ct\",\n        \"accessionNumber\": \"a-15\",\n        \"referringPhysicianName\": \"SEINFELD^JOSHUA^^^\",\n        \"observationDateTime\": \"20050501103518\",\n        \"performingProviderName\": \"\",\n        \"relevantClinicalInfo\": \"\",\n        \"reasonForExam\": \"\"\n    },\n    \"diagnosticReportInfo\": {\n        \"reportDateTime\": \"20050501103518\",\n        \"status\": \"Final\",\n        \"contentType\": \"Text\",\n        \"content\": \"<br>Echocardiography Radiology Report<br><br>Reason for exam: Suspected Myocarditis<br>Radiologist: Test, Test MD<br><br>Report<br>Echo Data:<br><br>LVIDd 6.3cm, LVIDs 4.5 cm, IVSd 1.3 cm, LVPWd 0.79cm, LA 3.7 cm, LAV 63.10cm. For additional echo data, see report attached<br>ECG Rhythm: Normal sinus rhythm<br>Normal size of the left ventricle (End-diastolic volume = 29.80 ml/m2), normal wall thickness and normal left ventricular function (EF = 54%), no regional wall motion abnormalities, normal diastolic function.<br>Normal size of the left atrium, normal size of the right atrium.<br>Normal size and morphology of the right ventricle, normal right ventricular function, no abnormalities of the interventricular septum.<br>Normal size of all visible segments of the ascending aorta, normal size of the pulmonary artery, normal pulmonary valve (physiologic pulmonary regurgitation).<br>Normal morphology and function of the aortic valve; Normal morphology and function of the mitral valve.<br>Normal morphology of the tricuspid valve, physiologic / trace tricuspid regurgitation, normal systolic pulmonary pressure (sPAP = 5.00 mmHg, TR velocity 1.30 m/s)<br>Normal size and respiratory collapse of the inferior vena cava.<br>No pericardial or pleural effusion<br>Conclusion:<br><br>Normal echocardiogram (no evidence for acute or chronic myocarditis). No relevant prior comparison available.<br>\",\n        \"principalInterpretingPhysicianName\": \"\",\n        \"assistantInterpretingPhysicianName\": \"\",\n        \"customReportInfo\": {\n            \"custom01\": \"\",\n            \"custom02\": \"\",\n            \"custom03\": \"\",\n            \"custom04\": \"\",\n            \"custom05\": \"\",\n            \"custom06\": \"\",\n            \"custom07\": \"\",\n            \"custom08\": \"\",\n            \"custom09\": \"\",\n            \"custom10\": \"\",\n            \"custom11\": \"\",\n            \"custom12\": \"\",\n            \"custom13\": \"\",\n            \"custom14\": \"\",\n            \"custom15\": \"\",\n            \"custom16\": \"\",\n            \"custom17\": \"\",\n            \"custom18\": \"\",\n            \"custom19\": \"\",\n            \"custom20\": \"\",\n            \"custom21\": \"\",\n            \"custom22\": \"\",\n            \"custom23\": \"\",\n            \"custom24\": \"\",\n            \"custom25\": \"\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/workflow/diagnostic-report",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"workflow",
+						"diagnostic-report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer e2ab66867d0720868834bd46d199603ca26636b424a710478e350cea4e1dcd4a",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"email\" :  \"system@statrad.com\",\n   \"password\" : \"test12\",\n    \"targetOrganizationId\" : \"QnjYortrHcaAZkcak\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://automation-vv-01.c.ei-cs-dev01-ein.internal/api/login",
+					"protocol": "https",
+					"host": [
+						"automation-vv-01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sessions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer a6b22b0de6730e22c0c4e2f76ce5483e292244b090cc6714e4a3ef3811ba3b84",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://automation-vv-01.c.ei-cs-dev01-ein.internal/sessions",
+					"protocol": "https",
+					"host": [
+						"automation-vv-01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List_exam_sessions",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer b029eeb4d34e6e7f63e7e1a004af69f9123652c49fd7947255bd4273c2c57d03",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integration01.c.ei-cs-dev01-ein.internal/api/examSessions?studyId=l6xb2bctqbqcdhyv7wgjc6sx",
+					"protocol": "https",
+					"host": [
+						"integration01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"api",
+						"examSessions"
+					],
+					"query": [
+						{
+							"key": "studyId",
+							"value": "l6xb2bctqbqcdhyv7wgjc6sx"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fecth_exam_session",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer b029eeb4d34e6e7f63e7e1a004af69f9123652c49fd7947255bd4273c2c57d03",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://integration01.c.ei-cs-dev01-ein.internal/api/examSessions/Wj7H9J4viq7b5dqTG",
+					"protocol": "https",
+					"host": [
+						"integration01",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"api",
+						"examSessions",
+						"Wj7H9J4viq7b5dqTG"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_qa_reason",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "Bearer meteor:GdRDlvBDdBvAbmiJHjRt1zPmLfnwvmjB_3Fx7TzckR0",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://workflow-green.c.ei-cs-dev01-ein.internal/qa-reason-mappings/mbo2mMDGYbFm9MTCt/",
+					"protocol": "https",
+					"host": [
+						"workflow-green",
+						"c",
+						"ei-cs-dev01-ein",
+						"internal"
+					],
+					"path": [
+						"qa-reason-mappings",
+						"mbo2mMDGYbFm9MTCt",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "prior exam",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer b512b8a2b6c58e95a948f4749457ae285b7eb3cddc29d5aee3a625d8b961b582",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n      \"select\": [\n        \"id\",\n        \"patientId\",\n        \"procedureId\",\n        \"studyIds\"\n      ],\n      \"limit\": 100,\n      \"offset\": 0\n    }\n"
+				},
+				"url": {
+					"raw": "https://pacs.clus-dmz-c001-us-east4.nio.ei-cs-dev01-ein.ein.local/api/organizations/f7dMniJyoJaaSi37d/priorExams/bYKfXMaoR9jkcCNMk",
+					"protocol": "https",
+					"host": [
+						"pacs",
+						"clus-dmz-c001-us-east4",
+						"nio",
+						"ei-cs-dev01-ein",
+						"ein",
+						"local"
+					],
+					"path": [
+						"api",
+						"organizations",
+						"f7dMniJyoJaaSi37d",
+						"priorExams",
+						"bYKfXMaoR9jkcCNMk"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
