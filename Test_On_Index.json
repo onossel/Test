@@ -12,7 +12,14 @@
       ],
       "accessionNumberUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+              "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -22,7 +29,7 @@
       ],
       "acquisitionStatus": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -32,7 +39,14 @@
       ],
       "assignedNameUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+              "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -42,7 +56,14 @@
       ],
       "bodyPartExaminedUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+              "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -57,7 +78,14 @@
       ],
       "examDescriptionUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -75,7 +103,14 @@
       ],
       "examReasonUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -104,7 +139,14 @@
       ],
       "lockedByUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -125,7 +167,7 @@
       },
       "matchStatus": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -141,13 +183,27 @@
       ],
       "modalitiesUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         }
       ],
-      "orderingDepartmentUpper": [
+      "orderingDepartment": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -157,13 +213,13 @@
       ],
       "orderingSystemId": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         }
       ],
-      "orderingSystemNameUpper": [
+      "orderingSystemName": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -173,7 +229,7 @@
       ],
       "organizationId": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -183,7 +239,14 @@
       ],
       "organizationNameUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -196,7 +259,14 @@
         "fields": {
           "valueUpperStripped": [
             {
-              "analyzer": "lowercaseKeywordAnalyzer",
+              "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
               "type": "string"
             },
             {
@@ -214,7 +284,14 @@
       ],
       "patientClassUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -228,29 +305,43 @@
           "type": "token"
         },
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         }
       ],
       "patientId": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         }
       ],
       "patientMrnUpper": [
         {
-          "normalizer": "lowercase",
-          "type": "token"
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+              "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
+          "type": "string"
         },
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
-          "type": "string"
+          "normalizer": "lowercase",
+          "type": "token"
         }
       ],
       "patientNameUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+              "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -258,9 +349,16 @@
           "type": "token"
         }
       ],
-      "performingDepartmentUpper": [
+      "performingDepartment": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -268,9 +366,16 @@
           "type": "token"
         }
       ],
-      "performingProviderNameUpper": [
+      "performingProviderName": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -280,7 +385,14 @@
       ],
       "procedureCodeUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -295,7 +407,14 @@
       ],
       "procedureDescriptionUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -305,7 +424,7 @@
       ],
       "procedureId": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         }
       ],
@@ -326,7 +445,7 @@
       ],
       "procedureStatus": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -339,7 +458,7 @@
         "fields": {
           "code": [
             {
-              "analyzer": "lowercaseKeywordAnalyzer",
+              "analyzer": "lucene.keyword",
               "type": "string"
             },
             {
@@ -352,7 +471,7 @@
       },
       "readStatus": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -367,7 +486,14 @@
       ],
       "referringPhysicianNameUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -385,7 +511,7 @@
                 "dynamic": false,
                 "fields": {
                   "id": {
-                    "analyzer": "lowercaseKeywordAnalyzer",
+                    "analyzer": "lucene.keyword",
                     "type": "string"
                   }
                 },
@@ -399,13 +525,20 @@
       },
       "rqUserId": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         }
       ],
       "siteName": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -415,7 +548,14 @@
       ],
       "source": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -425,7 +565,14 @@
       ],
       "sourceUpper": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -438,9 +585,26 @@
           "type": "string"
         }
       ],
+      "subspecialtyUpper": [
+        {
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
+          "type": "string"
+        },
+        {
+          "normalizer": "lowercase",
+          "type": "token"
+        }
+      ],
       "unmatchedReason": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "lucene.keyword",
           "type": "string"
         },
         {
@@ -448,9 +612,16 @@
           "type": "token"
         }
       ],
-      "visitCurrentLocationUpper": [
+      "visitCurrentLocation": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -458,9 +629,16 @@
           "type": "token"
         }
       ],
-      "visitPrimaryLocationUpper": [
+      "visitPrimaryLocation": [
         {
-          "analyzer": "lowercaseKeywordAnalyzer",
+          "analyzer": "ngramAnalizer",
+          "multi": {
+            "startsWith": {
+            "analyzer": "lucene.keyword",
+              "searchAnalyzer": "lucene.keyword",
+              "type": "string"
+            }
+          },
           "type": "string"
         },
         {
@@ -472,83 +650,25 @@
   },
   "analyzers": [
     {
-      "name": "lowercaseKeywordAnalyzer",
+      "charFilters": [
+        {
+          "mappings": {
+            "^": " "
+          },
+          "type": "mapping"
+        }
+      ],
+      "name": "ngramAnalizer",
       "tokenFilters": [
         {
           "type": "lowercase"
         }
       ],
       "tokenizer": {
-        "type": "keyword"
+        "maxGram": 2,
+        "minGram": 2,
+        "type": "nGram"
       }
     }
-  ],
-  "storedSource": {
-    "include": [
-      "id",
-      "accessionNumber",
-      "acquisitionStatus",
-      "assignedId",
-      "assignedName",
-      "bodyPartExamined",
-      "diagnosticReportId",
-      "examDateTime",
-      "examDescription",
-      "examOriginalDateTime",
-      "examReason",
-      "flag",
-      "imageCount",
-      "linkExamsInfo",
-      "lockedAt",
-      "lockedBy",
-      "lockedById",
-      "lockStatus",
-      "mappedPriority",
-      "matchStatus",
-      "modalitiesString",
-      "notes",
-      "notesCount",
-      "orderingDepartment",
-      "organizationId",
-      "organizationName",
-      "patientBirthDate",
-      "patientCurrentAgeDays",
-      "patientCurrentAgeMonths",
-      "patientCurrentAgeYears",
-      "patientGender",
-      "patientId",
-      "patientMrn",
-      "patientName",
-      "procedureCode",
-      "procedureDescription",
-      "procedureStartedDateTime",
-      "procedureScheduledDateTime",
-      "procedureCompletedDateTime",
-      "procedureLastModifiedDateTime",
-      "procedureId",
-      "procedureStatus",
-      "proposedStudyInstanceUid",
-      "qaIssue",
-      "readStatus",
-      "receivedDateTime",
-      "referringPhysicianName",
-      "siteName",
-      "source",
-      "studyId",
-      "studyIds",
-      "studyInstanceUids",
-      "orderingSystemName",
-      "orderingSystemId",
-      "unmatchedReason",
-      "unmatchedByUserId",
-      "unmatchedAt",
-      "visitPrimaryLocation",
-      "visitCurrentLocation",
-      "updatedAt",
-      "performingProviderName",
-      "performingDepartment",
-      "patientClass",
-      "otherPatientId"
-    ]
-  }
+  ]
 }
